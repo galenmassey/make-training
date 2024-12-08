@@ -27,14 +27,14 @@ def process_content(raw_content):
             url_match = re.match(r'\s*(https?://[^\s]+)', section)
             if url_match:
                 url = url_match.group(1)
-                processed_text.append(f"\n\nSource: {url}\n")
+                processed_text.append(f'\n\nSource: {url}\n')
                 
             # Clean and add the content
             cleaned_text = clean_text(section)
             if cleaned_text:
                 processed_text.append(cleaned_text)
     
-    return "\n".join(processed_text)
+    return '\n'.join(processed_text)
 
 def main():
     # Sample usage
@@ -46,5 +46,5 @@ def main():
     with open('Make Training.txt', 'w', encoding='utf-8') as f:
         f.write(processed_content)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
